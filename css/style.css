@@ -1,0 +1,38 @@
+body {
+    background-color: #222;
+}
+
+.timerCell
+{
+    padding-top: 32px;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.timer-controls
+{
+    text-align: center;
+}
+
+.timer-span
+{
+    font-size: 48px;
+    border-radius: 15px;
+    background: #333;
+    color: #FFF;
+    padding: 20px;
+    width: 100px;
+    height: 100px;
+    font-family: Arial Black;
+}
+
+.timer-seperator
+{
+    font-size: 48px;
+    font-family: Arial Black;
+}
+
+.timerPicker
+{
+
+}
