@@ -2,6 +2,7 @@
 var hours = 0;
 var minutes = 0;
 var seconds = 0;
+var rawSeconds = 0;
 var paused = true;
 var aggression = 25;
 var step = 1; //1=Stopwatch, -1=Timer
@@ -27,7 +28,8 @@ function initTimerFields() {
 // Start the timer function to fire every second
 var timer = setInterval(function () {
     if (paused == false) {
-        seconds += step
+        seconds += step;
+        rawSeconds += 1;
     }
     if (seconds < 0) {
         seconds = 59;

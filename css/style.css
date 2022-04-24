@@ -14,22 +14,24 @@ body {
     text-align: center;
 }
 
-.timer-span
+.debugVar 
 {
-    font-size: 48px;
-    border-radius: 15px;
-    background: #333;
-    color: #FFF;
-    padding: 20px;
-    width: 100px;
-    height: 100px;
-    font-family: Arial Black;
+
 }
 
-.timer-seperator
+.hidden
 {
-    font-size: 48px;
-    font-family: Arial Black;
+    display: none;
+}
+
+.debugVarValue
+{
+    padding: .2rem .4rem;
+    padding-top: 2px;
+    font-size: .875em;
+    color: #fff;
+    background-color: #212529;
+    border-radius: .2rem;
 }
 
 .timerPicker
