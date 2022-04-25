@@ -71,8 +71,11 @@ function reset() {
     minutes = 0;
     seconds = 0;
     rawSeconds = 0;
+    paused = true;
     renderTimer(rawSeconds);
     sensitivity = startSensitivity;
+    if (playSound == true) 
+            new Audio('click.mp3').play();
 }
 
 // Function to update the timer readout on the document
