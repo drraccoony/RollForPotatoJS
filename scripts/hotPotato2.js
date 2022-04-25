@@ -32,6 +32,7 @@ function updateSettingsFields() {
 
     document.getElementById("startThresholdInput").value = startThreshold;
     document.getElementById("startSensitivityInput").value = startSensitivity; 
+    document.getElementById("sensitivityStepValue").value = sensitivityStep;
 }
 
 var timer = setInterval(function () {

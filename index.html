@@ -29,7 +29,7 @@
             <button class="btn btn-light" type="button" data-bs-toggle="modal" data-bs-target="#settingsModal"><i class="fa-solid fa-cog"></i></button><br><br>
             <button class="btn btn-light btn-sm" id="setTimerBtn" type="submit" onclick="toggleDebug()"><i class="fa-solid fa-bug"></i> Debug</button>
             <br><br><br>
-            v 0.1.0
+            v 0.1.1
 
         </div>
 
@@ -101,6 +101,18 @@
                         </div>
                         <div class="col-2">
                           <button type="button" class="btn btn-light" onclick="sensitivity = document.getElementById('startSensitivityInput').value; startSensitivity = document.getElementById('startSensitivityInput').value; updateDebugValues();">Set</button>
+                        </div>
+                    </div>
+                    <div class="row g-3 align-items-center settingItem">
+                        <div class="col-5">
+                          <label for="sensitivityStepValue" class="col-form-label">Sensitivity Step</label>
+                        </div>
+                        <div class="col-2">
+                          <input type="text" id="sensitivityStepValue" class="form-control" aria-describedby="passwordHelpInline"
+                          title="How far to step down Sensitivity with each second after startThreshold"> 
+                        </div>
+                        <div class="col-2">
+                          <button type="button" class="btn btn-light" onclick="sensitivityStep = document.getElementById('sensitivityStepValue').value; updateDebugValues();">Set</button>
                         </div>
                     </div>
                 </div>
