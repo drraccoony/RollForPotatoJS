@@ -104,11 +104,12 @@ function rollForPotato(i) {
 
     if (i == 0){
         console.log('Potato Hit.')
-        window.alert('Potato!');
+        
         // If we get hot potato
         paused = true;
         if (playSound == true) 
             new Audio('bell.mp3').play();
+        window.alert('Potato!');
     }
 }
 
