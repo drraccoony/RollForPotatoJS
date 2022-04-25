@@ -62,6 +62,8 @@ var timer = setInterval(function () {
 function toggleTimer() {
     paused = !paused;
     updateDebugValues();
+    if (playSound == true) 
+            new Audio('click.mp3').play();
 }
 
 function reset() {
