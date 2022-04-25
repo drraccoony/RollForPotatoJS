@@ -5,8 +5,8 @@ var seconds = 0; // Not used in logic anymore
 var rawSeconds = 0;
 var paused = true;
 var startThreshold = 60 * 2;
-var sensitivity = 200; //This is how likely it is to trip.
-var sensitivityStep = 5;
+var sensitivity = 350; //This is how likely it is to trip.
+var sensitivityStep = 2;
 var startSensitivity = sensitivity
 var debug = false;
 
@@ -102,7 +102,7 @@ function rollForPotato(i) {
         window.alert('Potato!');
         // If we get hot potato
         paused = true;
-        if (playSound == false) 
+        if (playSound == true) 
             new Audio('bell.mp3').play();
     }
 }
