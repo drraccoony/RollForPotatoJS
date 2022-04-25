@@ -24,6 +24,11 @@ body {
     display: none;
 }
 
+.settingItem
+{
+    padding-bottom: 10px;
+}
+
 .debugVarValue
 {
     padding: .2rem .4rem;

@@ -38,6 +38,8 @@
                 <li>sensitivity: <span class="debugVarValue" id="debug_sensitivty"></span></li>
                 <li>sensitivityStep: <span class="debugVarValue" id="debug_sensitivtyStep"></span></li>
                 <li>playSound: <a href="#" onclick="playSound = !playSound; updateDebugValues();"><span class="debugVarValue" id="debug_playSound"></span></a></li>
+                <li>streamerMode: <a href="#" onclick="streamerMode = !streamerMode; updateDebugValues();"><span class="debugVarValue" id="debug_streamerMode"></span></a></li>
+                <li>stopTimerOnPotato: <a href="#" onclick="stopTimerOnPotato = !stopTimerOnPotato; updateDebugValues();"><span class="debugVarValue" id="debug_stopTimerOnPotato"></span></a></li>
             </ul>
         </div>
 
@@ -53,10 +55,52 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-            ...
+                <div class="mb-3">
+                    <h4>Basic</h4>
+                    <div class="mb-3 form-check">
+                      <input type="checkbox" class="form-check-input" id="soundCheck" onclick="playSound = !playSound; updateDebugValues();">
+                      <label class="form-check-label" for="soundCheck">Play Sound on potato</label>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="stopTimerCheck" onclick="stopTimerOnPotato = !stopTimerOnPotato; updateDebugValues();">
+                        <label class="form-check-label" for="stopTimerCheck">Stop Timer on Trigger</label>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="streamCheck" onclick="streamerMode = !streamerMode; updateDebugValues();">
+                        <label class="form-check-label" for="streamCheck">OBS / Stream Compatilbity</label>
+                    </div>
+                    <!-- <h4>Save/Load</h4>
+                    <div class="row g-3 align-items-center">
+                        <div class="col-3"><button type="button" class="btn btn-default" data-bs-dismiss="modal"><i class="fa-solid fa-folder"></i> Load</button></div>
+                        <div class="col-3"><button type="button" class="btn btn-default" data-bs-dismiss="modal"><i class="fa-solid fa-save"></i> Save</button></div>
+                    </div> -->
+                    <hr>
+                    <h4>Advanced</h4>
+                    <div class="row g-3 align-items-center settingItem">
+                        <div class="col-5 ">
+                          <label for="startThresholdInput" class="col-form-label">Minimum Time (Seconds)</label>
+                        </div>
+                        <div class="col-2">
+                          <input type="text" id="startThresholdInput" class="form-control" aria-describedby="passwordHelpInline"
+                          title="Grace period in seconds before rolling">
+                        </div>
+                    </div>
+                    <div class="row g-3 align-items-center settingItem">
+                        <div class="col-5">
+                          <label for="startSensitivityInput" class="col-form-label">Sensitivity Start</label>
+                        </div>
+                        <div class="col-2">
+                          <input type="text" id="startSensitivityInput" class="form-control" aria-describedby="passwordHelpInline"
+                          title="Trigger sensitivity. Lower is more sensitive.">
+                        </div>
+                    </div>
+                </div>
+                
+                    
             </div>
             <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-success" onclick="saveSettings()" data-bs-dismiss="modal">Save</button>
             </div>
         </div>
         </div>

@@ -1,21 +1,41 @@
 // Init some variables
-var hours = 0;
-var minutes = 0;
-var seconds = 0;
+var hours = 0; // Not used in logic anymore
+var minutes = 0; // Not used in logic anymore
+var seconds = 0; // Not used in logic anymore
 var rawSeconds = 0;
 var paused = true;
 var startThreshold = 60 * 2;
 var sensitivity = 200; //This is how likely it is to trip.
 var sensitivityStep = 5;
 var startSensitivity = sensitivity
-var playSound = true;
 var debug = false;
 
+// Settings variables
+var playSound = true;
+var stopTimerOnPotato = true;
+var streamerMode = false;
+
+// Setup some selectors
 var debugDiv = document.getElementById("debug");
 
 // Lets initialize some shit
 updateDebugValues();
+updateSettingsFields();
 renderTimer(rawSeconds);
+
+// End Setup
+// **********************
+function updateSettingsFields() {
+    document.getElementById("soundCheck").checked = playSound;
+    document.getElementById("stopTimerCheck").checked = stopTimerOnPotato;
+    document.getElementById("streamCheck").checked = streamerMode;
+
+    document.getElementById("startThresholdInput").value = startThreshold;
+    document.getElementById("startSensitivityInput").value = startSensitivity;
+
+    
+    
+}
 
 var timer = setInterval(function () {
     // Start the timer function to fire every second
@@ -100,4 +120,8 @@ function updateDebugValues() {
     document.getElementById("debug_sensitivty").innerHTML = sensitivity;
     document.getElementById("debug_sensitivtyStep").innerHTML = sensitivityStep;
     document.getElementById("debug_playSound").innerHTML = playSound;
+    document.getElementById("debug_stopTimerOnPotato").innerHTML = stopTimerOnPotato;
+    document.getElementById("debug_streamerMode").innerHTML = streamerMode;
+
+    
 }
