@@ -31,10 +31,7 @@ function updateSettingsFields() {
     document.getElementById("streamCheck").checked = streamerMode;
 
     document.getElementById("startThresholdInput").value = startThreshold;
-    document.getElementById("startSensitivityInput").value = startSensitivity;
-
-    
-    
+    document.getElementById("startSensitivityInput").value = startSensitivity; 
 }
 
 var timer = setInterval(function () {
@@ -101,6 +98,8 @@ function rollForPotato(i) {
     sensitivity -= sensitivityStep;
 
     if (i == 0){
+        console.log('Potato Hit.')
+        window.alert('Potato!');
         // If we get hot potato
         paused = true;
         if (playSound == false) 
