@@ -18,10 +18,18 @@ var streamerMode = false;
 // Setup some selectors
 var debugDiv = document.getElementById("debug");
 
+console.log("Hello")
+
+// Search for URL parameters
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const autoStart = urlParams.get('autoStart')
+console.log(autoStart);
+
 // Lets initialize some shit
 updateDebugValues();
 updateSettingsFields();
-renderTimer(rawSeconds);
+renderTimer(rawSeconds, 0, 0);
 
 // End Setup
 // **********************
@@ -52,7 +60,7 @@ var timer = setInterval(function () {
         minutes += 1;
     }
 
-    renderTimer(rawSeconds);
+    renderTimer(rawSeconds, seconds, minutes);
 
     if (debug)
     updateDebugValues();
@@ -63,6 +71,10 @@ var timer = setInterval(function () {
 function toggleTimer() {
     paused = !paused;
     updateDebugValues();
+    if (paused)
+        document.getElementById("streamerStatus").innerHTML = "Paused at"
+    if (!paused)
+        document.getElementById("streamerStatus").innerHTML = "Running for"
     if (playSound == true) 
             new Audio('click.mp3').play();
 }
@@ -73,15 +85,18 @@ function reset() {
     seconds = 0;
     rawSeconds = 0;
     paused = true;
-    renderTimer(rawSeconds);
+    document.getElementById("streamerStatus").innerHTML = "Waiting at"
+    renderTimer(rawSeconds, 0, 0);
     sensitivity = startSensitivity;
     if (playSound == true) 
             new Audio('click.mp3').play();
 }
 
 // Function to update the timer readout on the document
-function renderTimer(s) {
+function renderTimer(s, ss, sm) {
     document.getElementById("seconds").innerHTML = s
+    document.getElementById("seconds_streamer").innerHTML = ss
+    document.getElementById("minutes_streamer").innerHTML = sm
 }
 
 function toggleDebug() {
@@ -107,10 +122,12 @@ function rollForPotato(i) {
         console.log('Potato Hit.')
         
         // If we get hot potato
+        document.getElementById("streamerStatus").innerHTML = "Triggered at"
         paused = true;
         if (playSound == true) 
             new Audio('bell.mp3').play();
         window.alert('Potato!');
+        
     }
 }
 

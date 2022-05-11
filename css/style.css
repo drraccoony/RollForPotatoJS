@@ -24,6 +24,59 @@ body {
     display: none;
 }
 
+.streamui
+{
+    background-color: #ff00ff;
+    width: 100%; 
+    height: 500px
+}
+
+.streambg
+{
+position: absolute;
+
+}
+
+
+
+
+.streamcontainerchroma
+{
+    background-color: #00ff00;
+    padding: 60px;
+}
+
+.streamcontainer {
+    position: relative;
+}
+
+.streamheader
+{
+    font-weight: bold;
+}
+  
+.streamtext 
+  {
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    text-align: center;
+    font-size: 44px;
+    color: white;
+    font-family: 'Tapestry', cursive;
+  }
+  
+  img { 
+    width: 100%;
+    height: auto;
+  }
+
+
+
+
+
+
+
 .settingItem
 {
     padding-bottom: 10px;
