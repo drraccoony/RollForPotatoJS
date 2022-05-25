@@ -4,9 +4,9 @@ var minutes = 0; // Not used in logic anymore
 var seconds = 0; // Not used in logic anymore
 var rawSeconds = 0;
 var paused = true;
-var startThreshold = 60 * 2;
-var sensitivity = 350; //This is how likely it is to trip.
-var sensitivityStep = 2;
+var startThreshold = 900; //Minimum Time
+var sensitivity = 1500; // Senstivity - This is how likely it is to trip.
+var sensitivityStep = 1; // How much to step with each roll
 var startSensitivity = sensitivity
 var debug = false;
 
